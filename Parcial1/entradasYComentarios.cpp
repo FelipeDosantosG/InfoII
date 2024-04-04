@@ -27,3 +27,19 @@
     cout << "El valor del return: " << matrix << endl << endl;
     */
     //cout << "El primer dato al que se refiere la llave es: " << keyV << endl;
+
+/*#include <iostream>
+
+using namespace std;
+
+
+int main() {
+
+    char x = '-5';
+
+    int x2 = x - '0';
+
+    cout << "El valor de x: " << x2 << endl;
+
+    return 0;
+}*/

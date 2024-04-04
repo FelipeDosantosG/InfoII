@@ -69,11 +69,40 @@ void hacerMatriz(int matriz[MAX][MAX], int n, int* matrix, int fil, int col){
 
 int main() {
     
-    int n1 = 3, n2 = 5, fil = 2, col = 2, matriz[MAX][MAX], matrix, matrixR; //n1 representa el tamaño de la matriz 1
+    int n1 = 3, n2 = 5, fil = 2, col = 2, matriz[MAX][MAX], matrix, matrixR, tamMatriz = 0; //n1 representa el tamaño de la matriz 1
+    int keyInt[5]={};
 
-    hacerMatriz(matriz, n1, &matrix, fil, col);
+    cout << "Ingrese los valores de la llave" << endl << endl;
 
-    cout << "El valor del return: " << matrix << endl << endl;
+    for (int i = 0; i < 5; i++){
+        cout << "Valor " << i + 1 << ": "; 
+        cin >> keyInt[i];
+    }
+
+    if ((keyInt[0] > keyInt[1]) || (keyInt[0] == keyInt[1])){
+        tamMatriz = keyInt[0];
+    } else if (keyInt[0] < keyInt[1]){
+        tamMatriz = keyInt[1];
+    } else if ((keyInt[0] < 3) || (keyInt[1] < 3)){
+        tamMatriz = 3;
+    }
+    
+    if ((tamMatriz % 2) == 0){
+        tamMatriz ++;
+    }
+    
+    if ((tamMatriz == 3) and (keyInt[2] == -1)){
+        tamMatriz = 5;
+    }
+    
+    cout << "Tamanho de la matriz primera " << tamMatriz << " Tamanho del valor tercero: " << keyInt[2] << endl;
+
+    hacerMatriz(matriz, tamMatriz, &matrix, fil, col);
+
+
+    /*hacerMatriz(matriz, n1, &matrix, fil, col);
+    cout << "Ingrese el valor de la llave";
+    //cout << "El valor del return: " << matrix << endl << endl;
 
     if (matrix == 0){
         cout << "El tamaño rotarMatriz(matriz, n1) debería ser diferente.  \n \n";
@@ -81,7 +110,7 @@ int main() {
         cout << "El tamaño de la matriz está bién. \n \n";
     }
 
-    rotarMatriz(matriz, n1, &matrixR, fil, col);
+    rotarMatriz(matriz, n1, &matrixR, fil, col); */
    
     return 0;
 }
