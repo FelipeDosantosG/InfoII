@@ -1,3 +1,6 @@
+#include <iostream>
+
+using namespace std;
     /*cout << "Ingrese el valor de la llave k";
     cout << "Ingrese un número impar para el tamaño de la matriz 1: ";
     cin >> n1;
@@ -43,3 +46,21 @@ int main() {
 
     return 0;
 }*/
+
+//La función debe validar si los datos de entrada son números y que en las posiciones 1, 2, los números deben ser mayores a 0: y enteros 3, 4, 5 sean solo tres valores: -1, 0, 1
+
+
+
+int main(){
+    int x;
+
+    cin >> x;
+
+    cout << x << endl;
+
+}
+
+
+
+//opción 1
+//opción 2

@@ -72,13 +72,27 @@ int main() {
     int n1 = 3, n2 = 5, fil = 2, col = 2, matriz[MAX][MAX], matrix, matrixR, tamMatriz = 0; //n1 representa el tamaño de la matriz 1
     int keyInt[5]={};
 
-    cout << "Ingrese los valores de la llave" << endl << endl;
+    cout << "Ingrese los valores de la llave. \nTenga en cuenta que si ingresa un número con decimales, solo se tendrán en cuenta la parte entera" << endl << endl;
 
     for (int i = 0; i < 5; i++){
-        cout << "Valor " << i + 1 << ": "; 
+        cout << "Valor " << i + 1 << ": ";
         cin >> keyInt[i];
+
+        // Esta validación verifica que los primeros dos datos sean mayores a cero y guarda su parte entera en un arreglo llamado keyInt
+        while ((i < 2) && (keyInt[i] <= 0)){ 
+            cout << "Recuerde que en este campo solo puede ingresar números mayores a cero y enteros: ";
+            cin >> keyInt[i];
+        }
+
+        // Esta validación verifica que los últimos tres datos sean -1, 0 ó 1
+        while ((i > 1) && ((keyInt[i] != -1) && (keyInt[i] != 0) && (keyInt[i] != 1))){
+            cout << "Recuerde que en este campo solo puede ingresar uno de tres números: -1, 0, 1. \nFavor ingresar una de estas opciones: ";
+            cin >> keyInt[i];
+        }
+        cout << "El valor " << i << " es: " << keyInt[i] << endl;
     }
 
+    // Estas validaciones se encargan de elegir el tamaño de la matriz primera
     if ((keyInt[0] > keyInt[1]) || (keyInt[0] == keyInt[1])){
         tamMatriz = keyInt[0];
     } else if (keyInt[0] < keyInt[1]){
@@ -87,6 +101,7 @@ int main() {
         tamMatriz = 3;
     }
     
+    // Validación que se asegura que el valor seleccionado para el tamaño de la matriz sea impar
     if ((tamMatriz % 2) == 0){
         tamMatriz ++;
     }
